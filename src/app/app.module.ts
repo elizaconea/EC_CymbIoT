@@ -16,8 +16,7 @@ import {
 import { TaskListModule } from './task-list/task-list.module';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskComponent } from './task/task.component';
-import {MatButtonModule} from '@angular/material/button'
-
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,8 @@ import {MatButtonModule} from '@angular/material/button'
     MatCheckboxModule,
     MatCardModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    
   ],
   // exports: [
   //   TaskComponent,

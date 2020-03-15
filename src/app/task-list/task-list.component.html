@@ -1,15 +1,12 @@
 
-<div *ngIf="tasks.length">
-    <mat-selection-list #taskList [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)">
-        <mat-list-option class="myClass" checkboxPosition="before" *ngFor="let task of tasks" [value] = "task">
-        <div *ngIf="!taskList.selectedOptions.selected.length" >{{task}}</div>  
-        <div *ngIf="taskList.selectedOptions.selected.length" class="customInput">{{task}}</div>  
-        </mat-list-option>
-      </mat-selection-list>
-
-      <p>
-        {{selectedOption}}
-      </p>
+ <div *ngIf="tasks.length">
+  <mat-selection-list #taskList [(ngModel)]="selectedOptions" >
+      <mat-list-option class="myClass" checkboxPosition="before" *ngFor="let task of tasks" [value] = "task"
+      (click)="onItemChange(task, isChecked)">
+       <div *ngIf="(!isChecked) || (task !== selectedOption)">{{task}}</div>  
+      <div *ngIf="(isChecked) && (task === selectedOption)" class="customInput">{{task}}</div>  
+      </mat-list-option>
+    </mat-selection-list>
 </div>
 <br />
 <my-task (exampleOutput) = "addTask($event)"></my-task>

@@ -15,7 +15,6 @@ export class TaskComponent {
   isHidden: boolean = true;
 
   addTask(newTask: string) {
-    debugger
     if (newTask) {
       this.exampleOutput.emit(newTask);
       this.isHidden =  true;
