@@ -1,0 +1,13 @@
+
+.myClass{
+    display: flex;
+    height: 48px;
+    -webkit-tap-highlight-color: transparent;
+    width: 23%!important;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.customInput{
+    text-decoration: line-through;
+}
