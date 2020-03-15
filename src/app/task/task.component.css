@@ -10,6 +10,7 @@
   input {
     padding: 2px;
     margin: 0 10px 10px 0;
+    color: grey;
   }
   
   button, input[type="button"], input[type="submit"] { 

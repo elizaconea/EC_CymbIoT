@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatInputModule,
   MatSelectModule,
@@ -13,7 +13,6 @@ import {
   MAT_CHECKBOX_CLICK_ACTION,
   MatListModule
 } from "@angular/material";
-import { TaskListModule } from './task-list/task-list.module';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskComponent } from './task/task.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -35,12 +34,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatListModule,
     FormsModule,
+    ReactiveFormsModule 
     
   ],
-  // exports: [
-  //   TaskComponent,
-  //   TaskListComponent
-  // ],
   providers: [{provide: MAT_CHECKBOX_CLICK_ACTION, useValue: 'check'}],
   bootstrap: [AppComponent, TaskListComponent]
 })

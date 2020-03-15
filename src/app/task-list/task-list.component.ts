@@ -1,5 +1,4 @@
-import { Component, Input } from "@angular/core";
-import {  MatSelectionListChange } from '@angular/material/list';
+import { Component } from "@angular/core";
 
 
 @Component({
@@ -18,7 +17,7 @@ export class TaskListComponent {
     this.tasks.push(task);
   };
 
-  onItemChange = (task, isChecked: boolean) => {
+  onItemChange = (task: any, isChecked: boolean) => {
     this.selectedOption = task;
     this.isChecked = !isChecked;
   };
