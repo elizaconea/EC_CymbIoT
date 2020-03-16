@@ -1,24 +1,33 @@
 import { Component } from "@angular/core";
 
-
 @Component({
   selector: "my-task-list",
   templateUrl: "task-list.component.html",
   styleUrls: ["./task-list.component.css"]
 })
 export class TaskListComponent {
-  tasks: string[] = [];
-  isChecked: boolean = false;
+  tasks: any[] = [];
   selectedOptions = [];
-  selectedOption: any;
   valueSelected: string;
 
-  addTask = (task: string) => {
-    this.tasks.push(task);
+  addTask = (name: string) => {
+    this.tasks.push({ name, isChecked: false });
   };
 
-  onItemChange = (task: any, isChecked: boolean) => {
-    this.selectedOption = task;
-    this.isChecked = !isChecked;
+  onItemChange = (updatedTask: any) => {
+    const myUpdatedTasks = [...this.tasks];
+    myUpdatedTasks.map(task => {
+      if (task.name === updatedTask.name) {
+        if (updatedTask.isChecked) {
+          updatedTask.isChecked = false;
+        } else {
+          updatedTask.isChecked = true;
+        }
+        return { ...updatedTask };
+      } else {
+        return task;
+      }
+    });
+    this.tasks = [...myUpdatedTasks];
   };
 }
